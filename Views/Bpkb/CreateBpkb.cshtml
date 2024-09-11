@@ -1,0 +1,70 @@
+@model BpkbViewModel
+
+<form asp-action="CreateBpkb" method="post">
+	<div class="form-group">
+		<label asp-for="AgreementNumber"></label>
+		<input asp-for="AgreementNumber" class="form-control" />
+		<span asp-validation-for="AgreementNumber" class="text-danger"></span>
+	</div>
+	<div class="form-group">
+		<label asp-for="BpkbNo"></label>
+		<input asp-for="BpkbNo" class="form-control" />
+		<span asp-validation-for="BpkbNo" class="text-danger"></span>
+	</div>
+	<div class="form-group">
+		<label asp-for="BranchId"></label>
+		<input asp-for="BranchId" class="form-control" />
+		<span asp-validation-for="BranchId" class="text-danger"></span>
+	</div>
+	<div class="form-group">
+		<label asp-for="BpkbDate"></label>
+		<input asp-for="BpkbDate" type="date" class="form-control" />
+		<span asp-validation-for="BpkbDate" class="text-danger"></span>
+	</div>
+	<div class="form-group">
+		<label asp-for="FakturNo"></label>
+		<input asp-for="FakturNo" class="form-control" />
+		<span asp-validation-for="FakturNo" class="text-danger"></span>
+	</div>
+	<div class="form-group">
+		<label asp-for="FakturDate"></label>
+		<input asp-for="FakturDate" type="date" class="form-control" />
+		<span asp-validation-for="FakturDate" class="text-danger"></span>
+	</div>
+	<div class="form-group">
+		<label asp-for="LocationId"></label>
+		<input asp-for="LocationId" class="form-control" />
+		<span asp-validation-for="LocationId" class="text-danger"></span>
+	</div>
+	<div class="form-group">
+		<label asp-for="PoliceNo"></label>
+		<input asp-for="PoliceNo" class="form-control" />
+		<span asp-validation-for="PoliceNo" class="text-danger"></span>
+	</div>
+	<div class="form-group">
+		<label asp-for="BpkbDateIn"></label>
+		<input asp-for="BpkbDateIn" type="date" class="form-control" />
+		<span asp-validation-for="BpkbDateIn" class="text-danger"></span>
+	</div>
+	<div class="form-group">
+		<label asp-for="CreatedBy"></label>
+		<input asp-for="CreatedBy" class="form-control" />
+		<span asp-validation-for="CreatedBy" class="text-danger"></span>
+	</div>
+	<div class="form-group">
+		<label asp-for="CreatedOn"></label>
+		<input asp-for="CreatedOn" type="date" class="form-control" />
+		<span asp-validation-for="CreatedOn" class="text-danger"></span>
+	</div>
+	<div class="form-group">
+		<label asp-for="LastUpdatedBy"></label>
+		<input asp-for="LastUpdatedBy" class="form-control" />
+		<span asp-validation-for="LastUpdatedBy" class="text-danger"></span>
+	</div>
+	<div class="form-group">
+		<label asp-for="LastUpdatedOn"></label>
+		<input asp-for="LastUpdatedOn" type="date" class="form-control" />
+		<span asp-validation-for="LastUpdatedOn" class="text-danger"></span>
+	</div>
+	<button type="submit" class="btn btn-primary">Submit</button>
+</form>
