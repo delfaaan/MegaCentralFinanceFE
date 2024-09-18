@@ -1,0 +1,107 @@
+@model List<BpkbViewModel>
+
+<style>
+	.card-text {
+		margin-bottom: 10px;
+	}
+
+	.card-title {
+		margin-bottom: 1em;
+	}
+
+	td {
+		padding-left: 0.5em;
+	}
+
+	button {
+		float: right;
+		margin: 0.5em 0 0 0;
+	}
+
+	.btn .btn-primary {
+		padding: 0;
+	}
+
+	.card {
+		margin: 1em 0;
+	}
+</style>
+
+<div style="padding: 2em;" class="row">
+	<h1 style="margin-bottom: 25px;">List BPKB</h1>
+	@foreach (var bpkb in Model)
+	{
+	<div class="col-md-4">
+		<div class="card">
+			<div class="card-body">
+				<h4 class="card-title">@bpkb.AgreementNumber</h4>
+				<table>
+					<tr>
+						<th>BPKB No</th>
+						<th>:</th>
+						<td>@bpkb.BpkbNo</td>
+					</tr>
+					<tr>
+						<th>Branch ID</th>
+						<th>:</th>
+						<td>@bpkb.BranchId</td>
+					</tr>
+					<tr>
+						<th>BPKB Date</th>
+						<th>:</th>
+						<td>@bpkb.BpkbDate.ToString("yyyy-MM-dd")</td>
+					</tr>
+					<tr>
+						<th>Faktur No</th>
+						<th>:</th>
+						<td>@bpkb.FakturNo</td>
+					</tr>
+					<tr>
+						<th>Faktur Date</th>
+						<th>:</th>
+						<td>@bpkb.FakturDate.ToString("yyyy-MM-dd")</td>
+					</tr>
+					<tr>
+						<th>Location ID</th>
+						<th>:</th>
+						<td>@bpkb.LocationId</td>
+					</tr>
+					<tr>
+						<th>Police No</th>
+						<th>:</th>
+						<td>@bpkb.PoliceNo</td>
+					</tr>
+					<tr>
+						<th>BPKB Date In</th>
+						<th>:</th>
+						<td>@bpkb.BpkbDateIn.ToString("yyyy-MM-dd")</td>
+					</tr>
+					<tr>
+						<th>Created By</th>
+						<th>:</th>
+						<td>@bpkb.CreatedBy</td>
+					</tr>
+					<tr>
+						<th>Created On</th>
+						<th>:</th>
+						<td>@bpkb.CreatedOn.ToString("yyyy-MM-dd")</td>
+					</tr>
+					<tr>
+						<th>Last Updated By</th>
+						<th>:</th>
+						<td>@bpkb.LastUpdatedBy</td>
+					</tr>
+					<tr>
+						<th>Last Updated On</th>
+						<th>:</th>
+						<td>@bpkb.LastUpdatedOn.ToString("yyyy-MM-dd")</td>
+					</tr>
+				</table>
+				<button type="submit" class="btn btn-primary">
+					@Html.ActionLink("Update", "UpdateBpkb", new { agreementNumber = bpkb.AgreementNumber }, new { @class = "btn btn-primary" })
+				</button>
+			</div>
+		</div>
+	</div>
+	}
+</div>

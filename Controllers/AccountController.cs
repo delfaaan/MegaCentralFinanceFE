@@ -1,7 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
-using System.Net.Http.Headers;
 using System.Text.Json;
-using System.Threading.Tasks;
 
 public class AccountController : Controller
 {
@@ -32,15 +30,17 @@ public class AccountController : Controller
 		{
 			var responseData = await response.Content.ReadAsStringAsync();
 
-			// Safely parse JSON response
 			try
 			{
 				var jsonDocument = JsonDocument.Parse(responseData);
+				
 				if (jsonDocument.RootElement.TryGetProperty("token", out var tokenElement))
 				{
 					var token = tokenElement.GetString();
+					
 					HttpContext.Session.SetString("JwtToken", token);
-					return RedirectToAction("CreateBpkb", "Bpkb");
+
+					return RedirectToAction("Dashboard", "Bpkb");
 				}
 				else
 				{
